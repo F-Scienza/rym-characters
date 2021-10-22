@@ -1,0 +1,50 @@
+.CardInfo-Container{
+    margin-top: 20px;
+    width: 330px;
+    height: 355px;
+    padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    background-color: var(--background);
+    display: grid;
+    grid-template-areas: 
+    "        .        .       "
+    "       pic       pic     "
+    "       pic       pic     "
+    "      info1      info1   "
+    "      info2      info3   "
+    "      info2      info3  ";
+}
+.CardInfo-Container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 375px;
+    border-radius: 30px;
+    background-color: var(--blue-munsell);
+    filter: blur(2px);
+    z-index: -1;
+}
+.CardInfo-ProfilePicture{
+    border-radius: 50%;
+    width: 140px;
+    grid-area: pic;
+    justify-self: center;
+}
+.CardInfo-Info1{
+    justify-self: center;
+    text-align: center;
+    grid-area: info1;
+}
+.CardInfo-Info2{
+    justify-self: center;
+    text-align: center;
+    grid-area: info2;
+}
+.CardInfo-Info3{
+    justify-self: center;
+    text-align: center;
+    grid-area: info3;
+}

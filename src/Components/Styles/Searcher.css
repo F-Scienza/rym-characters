@@ -1,0 +1,20 @@
+.Searher{
+    width: 270px;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: transparent;
+    font-weight: bold;
+    border-style: none;
+    border-bottom: 1px solid var(--blue-munsell);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: border-color 0.3s ease;
+}
+.Searher:focus{
+    color: white;
+    outline: black;
+    border-color: var(--electric-green);
+}
