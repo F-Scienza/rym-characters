@@ -1,28 +1,33 @@
 import React from 'react';
 import './Styles/CardInfo.css'
-import Picture from '../images/rym_jpg.jpg'
-function CardInfo () {
-    return (
-			<section className="CardInfo-Container">
-				<img 
-					src={Picture} 
-					className="CardInfo-ProfilePicture"
-					alt="profilepic"
-				/>
-				<div className="CardInfo-Info1">
-					<h2>Name</h2>
-					<h4>status 🟢</h4>
-				</div>
-				<div className="CardInfo-Info2">
-					<p>especie </p>
-					<p>genero</p>
-				</div>
-				<div className="CardInfo-Info3">
-					<p>origen.name</p>
-					<p>ultima vez visto en</p>
-				</div>
-			</section>
-		);
+
+function CardInfo(pickedCharacter) {
+
+	let { image, name, status, species, gender, location, origin } =
+		pickedCharacter;
+
+	const clicksection = () =>
+		console.log(image, name, status, species, gender, location, origin);
+	
+	return (
+		<section className="CardInfo-Container"
+			onClick={clicksection}
+		>
+			<img src={image} className="CardInfo-ProfilePicture" alt="profilepic" />
+			<div className="CardInfo-Info1">
+				<h2>{name}</h2>
+				<p>{status}</p>
+			</div>
+			<div className="CardInfo-Info2">
+				<p>{species}</p>
+				<p>{gender}</p>
+			</div>
+			<div className="CardInfo-Info3">
+				<p>{location}</p>
+				<p>{origin}</p>
+			</div>
+		</section>
+	);
 }
 
-export {CardInfo} ;
+export { CardInfo } ;
