@@ -3,28 +3,33 @@ import './Styles/CardInfo.css'
 
 function CardInfo(pickedCharacter) {
 
-	let { image, name, status, species, gender, location, origin } =
-		pickedCharacter;
+	let pickedCh = pickedCharacter.pickedCharacter
+	let image = pickedCh.image
+	let name = pickedCh.name
+	let status = pickedCh.status
+	let species = pickedCh.species
+	let gender = pickedCh.gender
 
-	const clicksection = () =>
-		console.log(image, name, status, species, gender, location, origin);
-	
+	const clicksection = () => console.log(pickedCharacter.pickedCharacter.location.name);
+
 	return (
-		<section className="CardInfo-Container"
-			onClick={clicksection}
-		>
+		<section className="CardInfo-Container" onClick={clicksection}>
 			<img src={image} className="CardInfo-ProfilePicture" alt="profilepic" />
 			<div className="CardInfo-Info1">
 				<h2>{name}</h2>
-				<p>{status}</p>
+				<p>
+					<strong>{status}</strong>
+				</p>
 			</div>
 			<div className="CardInfo-Info2">
-				<p>{species}</p>
-				<p>{gender}</p>
+				<p>
+					<strong>Specie:</strong> {species}
+				</p>
 			</div>
 			<div className="CardInfo-Info3">
-				<p>{location}</p>
-				<p>{origin}</p>
+				<p>
+					<strong>Gender:</strong> {gender}
+				</p>
 			</div>
 		</section>
 	);

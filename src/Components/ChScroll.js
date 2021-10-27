@@ -1,11 +1,11 @@
 import React from 'react';
 import './Styles/ChScroll.css'
 
-function ChScroll({ characters = [],  setPick }) {
+function ChScroll({ searchedCharacters, setPick }) {
 	return (
 		<section className="ChScroll-Container">
 			<ul className="ChScroll-ul">
-				{characters.map((item, index) => (
+				{searchedCharacters.map((item, index) => (
 					<li
 						key={index}
 						className="ChScroll-li"
