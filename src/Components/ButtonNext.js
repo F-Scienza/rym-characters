@@ -15,7 +15,7 @@ function ButtonNext({ setMoreCharacters }) {
             type="button" 
             onClick={loadCharacters}
         >
-			>
+			➡
 		</button>
 	);
 }

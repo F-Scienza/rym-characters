@@ -1,19 +1,16 @@
 import React from 'react';
 import './Styles/CardInfo.css'
 
-function CardInfo(pickedCharacter) {
-
-	let pickedCh = pickedCharacter.pickedCharacter
-	let image = pickedCh.image
-	let name = pickedCh.name
-	let status = pickedCh.status
-	let species = pickedCh.species
-	let gender = pickedCh.gender
-
-	const clicksection = () => console.log(pickedCharacter.pickedCharacter.location.name);
+function CardInfo(personaje) {
+	let personajeparseado = personaje.personaje
+	let image = personajeparseado.image
+	let name = personajeparseado.name
+	let status = personajeparseado.status
+	let species = personajeparseado.species
+	let gender = personajeparseado.gender
 
 	return (
-		<section className="CardInfo-Container" onClick={clicksection}>
+		<section className="CardInfo-Container" >
 			<img src={image} className="CardInfo-ProfilePicture" alt="profilepic" />
 			<div className="CardInfo-Info1">
 				<h2>{name}</h2>

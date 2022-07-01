@@ -1,7 +1,7 @@
 import React from 'react';
 import './Styles/ChScroll.css'
 
-function ChScroll({ searchedCharacters, setPick }) {
+function ChScroll({ searchedCharacters,  setPersonaje }) {
 	return (
 		<section className="ChScroll-Container">
 			<ul className="ChScroll-ul">
@@ -9,7 +9,9 @@ function ChScroll({ searchedCharacters, setPick }) {
 					<li
 						key={index}
 						className="ChScroll-li"
-						onClick={() => setPick(`${item.id}`)}
+						onClick={() => {
+							setPersonaje(item)
+						}}
 					>
 						{item.status === 'Dead' ? (
 							<div className="ChScroll-ChImg-Dead">
