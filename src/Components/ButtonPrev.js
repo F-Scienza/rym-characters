@@ -17,3 +17,4 @@ function ButtonPrev({ setMoreCharacters }) {
 }
 
 export default ButtonPrev;
+

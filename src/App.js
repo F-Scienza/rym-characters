@@ -22,7 +22,21 @@ function App() {
 		fetchCharacters(rymUrl);
 	}, [rymUrl]);
 
-	const [personaje, setPersonaje ] = useState({})
+
+	const defaultCh = {
+		created: '2017-11-04T18:48:46.250Z',
+		gender: 'Male',
+		image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+		location: {
+			name: 'Citadel of Ricks',
+			url: 'https://rickandmortyapi.com/api/location/3',
+		},
+		name: 'Rick Sanchez',
+		species: 'Human',
+		status: 'Alive',
+		url: 'https://rickandmortyapi.com/api/character/1',
+	};
+	const [personaje, setPersonaje] = useState( defaultCh );
 
 	let searchedCharacters;
 	const [searchValue, setSearchValue] = React.useState('');
