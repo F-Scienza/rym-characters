@@ -1,12 +1,11 @@
 import React from 'react';
 import './Styles/ButtonNext.css';
 
-function ButtonPrev({ setMoreCharacters }) {
-	const [page, setPage] = React.useState(2);
+function ButtonPrev({ info, setRymUrl }) {
+	const prevUrl = info.prev;
 
 	const loadCharacters = () => {
-		setMoreCharacters(`?page=${page}`);
-		setPage(page - 1);
+		setRymUrl = prevUrl;
 	};
 
 	return (
@@ -17,4 +16,3 @@ function ButtonPrev({ setMoreCharacters }) {
 }
 
 export default ButtonPrev;
-

@@ -1,20 +1,16 @@
 import React from 'react';
-import './Styles/ButtonNext.css'
+import './Styles/ButtonNext.css';
 
-function ButtonNext({ setMoreCharacters }) {
-
-    const [ page, setPage ] = React.useState(2)
+function ButtonNext({ info, setRymUrl }) {
+	const nextUrl = info.next;
 
 	const loadCharacters = () => {
-        setMoreCharacters(`?page=${page}`)
-		setPage(page+1);
+		console.log(info)
+		setRymUrl(nextUrl);
 	};
 
 	return (
-		<button 
-            type="button" 
-            onClick={loadCharacters}
-        >
+		<button type="button" onClick={loadCharacters}>
 			➡
 		</button>
 	);

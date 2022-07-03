@@ -6,37 +6,29 @@ import { Searcher } from './Components/Searcher';
 import { CardInfo } from './Components/CardInfo';
 import ButtonPrev from './Components/ButtonPrev';
 import ButtonNext from './Components/ButtonNext';
+import initialState from './initialState';
 
 function App() {
-	const [moreCharacter, setMoreCharacters] = useState('');
-	const rymUrl = `https://rickandmortyapi.com/api/character/${moreCharacter}`;
-	const [characters, setCharacters] = useState([]);
-	const [info, setInfo] = useState({})
+	const apiRymUrl = `https://rickandmortyapi.com/api/character`;
+	const [rymUrl, setRymUrl] = useState(apiRymUrl);
+
+	const [characters, setCharacters] = useState(initialState.results);
+	const [info, setInfo] = useState(initialState.info);
+	const [totalData, setTotalData] = useState(initialState);
+
 	const fetchCharacters = url => {
 		fetch(url)
 			.then(response => response.json())
-			.then(data => setCharacters(data.results))
+			.then(data => setTotalData(data))
 			.catch(error => console.log(error));
 	};
 	useEffect(() => {
 		fetchCharacters(rymUrl);
-	}, [rymUrl]);
+		setInfo(totalData.info);
+		setCharacters(totalData.results);
+	}, [rymUrl, totalData]);
 
-
-	const defaultCh = {
-		created: '2017-11-04T18:48:46.250Z',
-		gender: 'Male',
-		image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-		location: {
-			name: 'Citadel of Ricks',
-			url: 'https://rickandmortyapi.com/api/location/3',
-		},
-		name: 'Rick Sanchez',
-		species: 'Human',
-		status: 'Alive',
-		url: 'https://rickandmortyapi.com/api/character/1',
-	};
-	const [personaje, setPersonaje] = useState( defaultCh );
+	const [personaje, setPersonaje] = useState(initialState.results[0]);
 
 	let searchedCharacters;
 	const [searchValue, setSearchValue] = React.useState('');
@@ -59,9 +51,8 @@ function App() {
 				searchedCharacters={searchedCharacters}
 				setPersonaje={setPersonaje}
 			/>
-			{info.prev ? <ButtonPrev /> : null}
-			{info.next ? <ButtonNext /> : null}
-			
+			{ info.prev && <ButtonPrev setRymUrl={setRymUrl} info={info} /> }
+			{ info.next && <ButtonNext setRymUrl={setRymUrl} info={info}/> }
 			<CardInfo personaje={personaje} />
 		</div>
 	);
