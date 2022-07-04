@@ -1,4 +1,4 @@
-export default {
+const initialState = {
 	info: {
 		count: 826,
 		pages: 42,
@@ -28,3 +28,4 @@ export default {
 		},
 	],
 };
+export default initialState
