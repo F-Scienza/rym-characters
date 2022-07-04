@@ -1,12 +1,18 @@
 import React from 'react';
+import ButtonNext from './ButtonNext';
+import ButtonPrev from './ButtonPrev';
 import './Styles/ChScroll.css';
 
-function ChScroll({ searchedCharacters, setPersonaje }) {
+function ChScroll({ searchedCharacters, setPersonaje, info, setRymUrl }) {
 	return (
 		<section className="ChScroll-Container">
 			<ul className="ChScroll-ul">
 				{searchedCharacters.map((item, index) => (
-					<li key={index} className="ChScroll-li" onClick={()=>setPersonaje(item)}>
+					<li
+						key={index}
+						className="ChScroll-li"
+						onClick={() => setPersonaje(item)}
+					>
 						{item.status === 'Dead' ? (
 							<div className="ChScroll-ChImg-Dead">
 								<img
@@ -27,6 +33,8 @@ function ChScroll({ searchedCharacters, setPersonaje }) {
 					</li>
 				))}
 			</ul>
+			<ButtonPrev info={info} setRymUrl={setRymUrl} />
+			<ButtonNext info={info} setRymUrl={setRymUrl} />
 		</section>
 	);
 }

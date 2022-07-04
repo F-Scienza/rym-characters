@@ -4,8 +4,6 @@ import { Header } from './Components/Header';
 import { ChScroll } from './Components/ChScroll';
 import { Searcher } from './Components/Searcher';
 import { CardInfo } from './Components/CardInfo';
-import ButtonPrev from './Components/ButtonPrev';
-import ButtonNext from './Components/ButtonNext';
 import initialState from './initialState';
 
 function App() {
@@ -48,11 +46,11 @@ function App() {
 			<Header />
 			<Searcher searchValue={searchValue} setSearchValue={setSearchValue} />
 			<ChScroll
+				setRymUrl={setRymUrl}
+				info={info}
 				searchedCharacters={searchedCharacters}
 				setPersonaje={setPersonaje}
 			/>
-			{ info.prev && <ButtonPrev setRymUrl={setRymUrl} info={info} /> }
-			{ info.next && <ButtonNext setRymUrl={setRymUrl} info={info}/> }
 			<CardInfo personaje={personaje} />
 		</div>
 	);

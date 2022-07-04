@@ -1,5 +1,5 @@
 button{
-    background-color: var(--blue-munsell);
+    background-color: transparent;
     color: var(--electric-green);
     opacity: 0.9;
     font-weight: 1000;
@@ -10,9 +10,15 @@ button{
     border: none;
     position: absolute;
     z-index: 2;
-    right: 10px;
-    top: 26%
+    right: -2em;
+    top: 25%;
+    padding: 2px;
+}
+.button-img{
+    width: 1.5em;
+    border-radius: 50%;
+    justify-self: center;
 }
 .prev{
-    left: 10px;
+    left: -2.1em;
 }
