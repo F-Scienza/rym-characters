@@ -10,7 +10,7 @@ button{
     border: none;
     position: absolute;
     z-index: 2;
-    right: -2em;
+    right: -1em;
     top: 25%;
     padding: 2px;
 }
@@ -20,5 +20,5 @@ button{
     justify-self: center;
 }
 .prev{
-    left: -2.1em;
+    left: -1em;
 }
